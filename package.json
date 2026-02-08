@@ -1,0 +1,12 @@
+{
+    "name": "booksaloonz-root",
+    "version": "1.0.0",
+    "description": "Root for BookSaloonz Project",
+    "scripts": {
+        "install-all": "npm install && cd server && npm install && cd ../booksaloon && npm install",
+        "dev": "npx concurrently \"npm run dev --prefix server\" \"npm run dev --prefix booksaloon\""
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.1"
+    }
+}

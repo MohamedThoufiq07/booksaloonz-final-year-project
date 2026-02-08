@@ -1,0 +1,63 @@
+:root {
+    --primary: #2dd4bf;
+    /* Teal 400 */
+    --primary-hover: #14b8a6;
+    /* Teal 500 */
+    --secondary: #64748b;
+    /* Slate Grey */
+    --accent: #5eead4;
+    /* Teal 300 */
+    --background: #1a1a1a;
+    /* Final Light Black */
+    --text-main: #f8fafc;
+    /* Light Slate for visibility on dark background */
+    --text-muted: #94a3b8;
+    /* Muted Slate light */
+    --white: #ffffff;
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--text-main);
+    background-color: var(--background);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    color: var(--text-main);
+    position: relative;
+    background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.75)),
+        url('./assets/salon_about.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--text-main);
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
