@@ -22,24 +22,19 @@
     /* Removed flex: 1 to allow content-based width */
 }
 
-.brand-logo-container {
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+.brand-logo {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(45, 212, 191, 0.4);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.brand-logo-text {
-    color: #ffffff;
-    font-weight: 900;
-    font-size: 1.5rem;
-    letter-spacing: -1px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.brand-logo:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 8px 25px rgba(45, 212, 191, 0.6);
 }
 
 .brand-name {

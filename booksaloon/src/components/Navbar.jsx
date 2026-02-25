@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Home as HomeIcon, Scissors, Package, Info, Phone, User, LogIn, ChevronDown, Sparkles, Settings, MapPin, LogOut, Menu, X } from 'lucide-react';
-import logo from '../assets/logo.jpg';
+import logo from '../assets/logo.png';
 import './Navbar.css';
 
 import { useAuth } from '../context/AuthContext';
@@ -19,9 +19,7 @@ const Navbar = () => {
         <nav className="navbar">
             {/* Left Side: Image Logo & Brand Name */}
             <div className="navbar-brand">
-                <div className="brand-logo-container">
-                    <span className="brand-logo-text">BZ</span>
-                </div>
+                <img src={logo} alt="BookSaloonz Logo" className="brand-logo" />
                 <span className="brand-name">
                     BookSaloonz
                 </span>

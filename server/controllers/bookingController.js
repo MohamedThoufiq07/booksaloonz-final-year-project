@@ -6,14 +6,19 @@ exports.createBooking = async (req, res) => {
     try {
         const { salon, service, price, date, time } = req.body;
 
-        // Check slot availability
+        // Check slot availability using DQN-powered booking algorithm
         const existingBookings = await Booking.find({ salon });
-        const isAvailable = bookingAlgorithm(existingBookings, date, time);
+        const availabilityResult = bookingAlgorithm(existingBookings, date, time, {
+            preferredTime: time,
+            serviceDuration: 1
+        });
 
-        if (!isAvailable) {
+        if (!availabilityResult.available) {
             return res.status(400).json({
                 success: false,
-                message: 'Time slot already booked'
+                message: availabilityResult.message || 'Time slot already booked',
+                suggestedSlot: availabilityResult.suggestedSlot,
+                alternatives: availabilityResult.alternatives
             });
         }
 
@@ -87,6 +92,47 @@ exports.updateStatus = async (req, res) => {
         });
     } catch (err) {
         console.error("Update Booking Status Error:", err.message);
+        res.status(500).json({
+            success: false,
+            message: 'Server Error'
+        });
+    }
+};
+
+// @desc Delete Booking (Cancel)
+exports.deleteBooking = async (req, res) => {
+    try {
+        const booking = await Booking.findById(req.params.id);
+
+        if (!booking) {
+            return res.status(404).json({
+                success: false,
+                message: 'Booking not found'
+            });
+        }
+
+        // Allow cancellation if user owns booking or if user is the salon owner
+        // For simple users, maybe only allow if status is pending? 
+        // For now, let's allow delete if user owns it.
+
+        if (booking.user.toString() !== req.user.id) {
+            // Check if it's the salon owner
+            // This requires fetching the salon to check owner, which is a bit more complex. 
+            // For simplify, only user who booked can delete (cancel) for now.
+            return res.status(401).json({
+                success: false,
+                message: 'Not authorized to cancel this booking'
+            });
+        }
+
+        await booking.deleteOne();
+
+        res.json({
+            success: true,
+            data: {}
+        });
+    } catch (err) {
+        console.error("Delete Booking Error:", err.message);
         res.status(500).json({
             success: false,
             message: 'Server Error'

@@ -125,7 +125,6 @@
 
 .payment-option.selected {
     border-color: #ef4444;
-    /* Red accent for payment */
     background: rgba(239, 68, 68, 0.1);
 }
 

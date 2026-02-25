@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, User, Store, MapPin, Image, UserPlus, Sparkles, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import logo from '../assets/logo.png';
 import './Signup.css'; // Reusing Signup.css for consistency
 
 const SalonSignup = () => {
@@ -77,7 +78,7 @@ const SalonSignup = () => {
         <div className="signup-container">
             <div className="signup-card partner-signup-card" style={{ maxWidth: '600px' }}>
                 <Link to="/" className="signup-header">
-                    <Sparkles className="signup-logo-icon" />
+                    <img src={logo} alt="Logo" className="auth-logo" />
                     <h1>Partner Registration</h1>
                     <p>Register your salon with BookSaloonz</p>
                 </Link>

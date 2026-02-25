@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, LogIn, Sparkles, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import logo from '../assets/logo.png';
 import './Signup.css';
 
 const SalonLogin = () => {
@@ -33,7 +34,7 @@ const SalonLogin = () => {
         <div className="signup-container">
             <div className="signup-card">
                 <Link to="/" className="signup-header">
-                    <Sparkles className="signup-logo-icon" />
+                    <img src={logo} alt="Logo" className="auth-logo" />
                     <h1>Partner Login</h1>
                     <p>Login to your Salon Partner account</p>
                 </Link>

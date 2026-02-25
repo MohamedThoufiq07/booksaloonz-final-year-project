@@ -1,9 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Sparkles, Camera, BarChart, History, Lightbulb } from 'lucide-react';
 import './HairTracker.css';
 
 const HairTracker = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="hair-tracker-container">
             <div className="tracker-hero">
@@ -51,7 +54,9 @@ const HairTracker = () => {
                 >
                     <h2>Ready to start your journey?</h2>
                     <p>Join thousands of users who are taking their hair care to the next level.</p>
-                    <button className="start-btn">Launch Simulator <Sparkles size={18} /></button>
+                    <button className="start-btn" onClick={() => navigate('/hairstyle-ai')}>
+                        Try AI Hairstyle Finder <Sparkles size={18} />
+                    </button>
                 </motion.div>
             </div>
         </div>
@@ -59,3 +64,4 @@ const HairTracker = () => {
 };
 
 export default HairTracker;
+

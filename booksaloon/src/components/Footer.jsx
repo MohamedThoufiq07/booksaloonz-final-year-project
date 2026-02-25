@@ -11,6 +11,7 @@ import {
     ChevronRight,
     Phone
 } from 'lucide-react';
+import logo from '../assets/logo.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -21,9 +22,7 @@ const Footer = () => {
                     {/* Brand Section */}
                     <div className="footer-section brand-info">
                         <div className="footer-logo">
-                            <div className="brand-logo-container" style={{ width: '32px', height: '32px' }}>
-                                <span className="brand-logo-text" style={{ fontSize: '1rem' }}>BZ</span>
-                            </div>
+                            <img src={logo} alt="Logo" className="footer-logo-img" />
                             <span style={{ fontWeight: 800, fontSize: '1.2rem', color: '#fff' }}>BookSaloonz</span>
                         </div>
                         <p className="footer-desc">

@@ -5,13 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './Home.css';
 
-/**
- * Enhanced Home Page Component
- * Features:
- * - Animated Hero Section
- * - Personalized Offers
- * - "Book Now" prominent CTA
- */
+
 const Home = () => {
     const { isLoggedIn } = useAuth();
     const navigate = useNavigate();

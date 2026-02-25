@@ -1,18 +1,11 @@
 :root {
     --primary: #2dd4bf;
-    /* Teal 400 */
     --primary-hover: #14b8a6;
-    /* Teal 500 */
     --secondary: #64748b;
-    /* Slate Grey */
     --accent: #5eead4;
-    /* Teal 300 */
     --background: #1a1a1a;
-    /* Final Light Black */
     --text-main: #f8fafc;
-    /* Light Slate for visibility on dark background */
     --text-muted: #94a3b8;
-    /* Muted Slate light */
     --white: #ffffff;
     --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);

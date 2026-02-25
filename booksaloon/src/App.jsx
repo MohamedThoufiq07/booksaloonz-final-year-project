@@ -13,6 +13,7 @@ import Signup from './pages/Signup';
 import SalonLogin from './pages/SalonLogin';
 import SalonSignup from './pages/SalonSignup';
 import HairTracker from './pages/HairTracker';
+import HairStyleAI from './pages/HairStyleAI';
 import ScrollToTop from './components/ScrollToTop';
 
 function AppContent() {
@@ -33,6 +34,7 @@ function AppContent() {
                     <Route path="/salon-login" element={<SalonLogin />} />
                     <Route path="/salon-signup" element={<SalonSignup />} />
                     <Route path="/hair-tracker" element={<HairTracker />} />
+                    <Route path="/hairstyle-ai" element={<HairStyleAI />} />
                     <Route path="*" element={<Home />} />
                 </Routes>
             </main>
